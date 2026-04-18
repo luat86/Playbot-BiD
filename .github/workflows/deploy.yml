@@ -1,7 +1,7 @@
 name: Deploy to GitHub Pages
 on:
   push:
-    branches: "main"
+    branches: ["main"] # Đảm bảo có dấu ngoặc vuông nếu cần
 permissions:
   contents: read
   pages: write
@@ -24,7 +24,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: dist # Đảm bảo thư mục này khớp với file build của bạn
   deploy:
     needs: build_site
     runs-on: ubuntu-latest
